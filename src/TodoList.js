@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
+import './TodoList.css';
 import * as apiCalls from './api';
 
 class TodoList extends Component {
@@ -53,7 +54,7 @@ class TodoList extends Component {
     ));
     return (
       <div>
-      <h1>Todo List</h1>
+      <h1>todo<span>list</span></h1>
       <TodoForm addTodo = {this.addTodo}/>
         <ul>
           {todos}
