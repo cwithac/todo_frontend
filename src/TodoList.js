@@ -60,11 +60,37 @@ class TodoList extends Component {
     .then(newTodo => this.setState({todos: [...this.state.todos, newTodo]}));
   }
 
+  deleteTodo(id) {
+    const deleteURL = APIURL + '/' + id;
+    fetch(deleteURL, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if(!response.ok) {
+        if(response.status >= 400 && response.status < 500) {
+          return response.json().then(data => {
+            let err = {errorMessage: data.message};
+            throw err;
+          })
+        } else {
+          let err = {errorMessage: 'Please try again later, server is not responding.'};
+          throw err;
+        }
+      }
+      return response.json();
+    })
+    .then(() => {
+      const todos = this.state.todos.filter(todo => todo._id !== id);
+      this.setState({todos: todos});
+    });
+  }
+
   render() {
     const todos = this.state.todos.map((t) => (
       <TodoItem
         key={t._id}
         {...t}
+        onDelete = {this.deleteTodo.bind(this, t._id)}
       />
     ));
     return (
