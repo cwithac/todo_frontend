@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
+import TodoForm from './TodoForm';
 const APIURL = 'https://todo-api-mernstack.herokuapp.com/api/todos';
 
 class TodoList extends Component {
@@ -43,6 +44,7 @@ class TodoList extends Component {
     return (
       <div>
       <h1>Todo List</h1>
+      <TodoForm />
         <ul>
           {todos}
         </ul>
