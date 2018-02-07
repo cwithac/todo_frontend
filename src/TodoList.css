@@ -10,3 +10,10 @@ h1 span {
   font-weight: 700;
   color: #191970;
 }
+
+.list {
+  display: block;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}

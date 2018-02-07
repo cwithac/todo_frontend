@@ -21,6 +21,7 @@
   margin: 2%;
   height: 25px;
   transition: .5s;
+  font-size: large;
 }
 
 .addButton:hover {

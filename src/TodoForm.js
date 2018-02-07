@@ -15,6 +15,7 @@ class TodoForm extends Component {
   }
   handleSubmit() {
     this.props.addTodo(this.state.inputValue);
+    this.setState({inputValue : ''});
   }
   render() {
     return (
@@ -27,7 +28,7 @@ class TodoForm extends Component {
         <button className = "addButton"
           onClick = {this.handleSubmit}
         >
-        		&#x2795;
+        		+
         </button>
       </div>
     )
