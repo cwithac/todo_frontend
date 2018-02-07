@@ -1,16 +1,18 @@
-# To Do List MERN
+# Todo List MERN
 
-[Hosted](https://todo-frontend-mernstack.herokuapp.com/)
-[Repository](https://github.com/cwithac/todo_frontend)
-[API Repository](https://github.com/cwithac/todo_api)
+Open access Todo List API and GUI
+
+- [Hosted](https://todo-frontend-mernstack.herokuapp.com/)
+- [Repository](https://github.com/cwithac/todo_frontend)
+- [API Repository](https://github.com/cwithac/todo_api)
 
 ```
 Technologies Used:
 
-- Mongo
+- MongoDB
 - Express
-- React
-- Node
+- React (create-react-app)
+- NodeJS
 ```
 
 _Modeled after 'todolist' and 'Building a Full-Stack App with React' via Udemy: The Advanced Web Developer Bootcamp_
