@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 const APIURL = 'https://todo-api-mernstack.herokuapp.com/api/todos';
 
 class TodoList extends Component {
@@ -33,8 +34,19 @@ class TodoList extends Component {
   }
 
   render() {
+    const todos = this.state.todos.map((t) => (
+      <TodoItem
+        key={t._id}
+        {...t}
+      />
+    ));
     return (
+      <div>
       <h1>Todo List</h1>
+        <ul>
+          {todos}
+        </ul>
+      </div>
     );
   }
 }
