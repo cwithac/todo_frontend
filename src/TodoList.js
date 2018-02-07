@@ -9,6 +9,7 @@ class TodoList extends Component {
     this.state = {
       todos: []
     }
+    this.addTodo = this.addTodo.bind(this);
   }
 
   componentWillMount(){
@@ -34,6 +35,10 @@ class TodoList extends Component {
     .then(todos => this.setState({todos}));
   }
 
+  addTodo(value) {
+    console.log("Adding: ", value);
+  }
+
   render() {
     const todos = this.state.todos.map((t) => (
       <TodoItem
@@ -44,7 +49,7 @@ class TodoList extends Component {
     return (
       <div>
       <h1>Todo List</h1>
-      <TodoForm />
+      <TodoForm addTodo = {this.addTodo}/>
         <ul>
           {todos}
         </ul>
