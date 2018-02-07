@@ -36,7 +36,28 @@ class TodoList extends Component {
   }
 
   addTodo(value) {
-    console.log("Adding: ", value);
+    fetch(APIURL, {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify({name: value})
+    })
+    .then(response => {
+      if(!response.ok) {
+        if(response.status >= 400 && response.status < 500) {
+          return response.json().then(data => {
+            let err = {errorMessage: data.message};
+            throw err;
+          })
+        } else {
+          let err = {errorMessage: 'Please try again later, server is not responding.'};
+          throw err;
+        }
+      }
+      return response.json();
+    })
+    .then(newTodo => this.setState({todos: [...this.state.todos, newTodo]}));
   }
 
   render() {
