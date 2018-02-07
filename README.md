@@ -1,5 +1,7 @@
 # To Do List MERN
 
+[Hosted](https://todo-frontend-mernstack.herokuapp.com/)
+[Repository](https://github.com/cwithac/todo_frontend)
 [API Repository](https://github.com/cwithac/todo_api)
 
 ```
